@@ -5,13 +5,19 @@ import MainLayout from "../../components/mainLayout/mainLayout";
 import Loader from "../../components/UI/loader/loader";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { resetCurrentEmployeeErorr } from "../../redux/slices/employees.slice";
+import { resetCurrentEmployeeErorr, setUpdateEmployeeSuccess } from "../../redux/slices/employees.slice";
 import { fetchEmployeeById } from "../../redux/thunks/employees.thunks";
+import { notifYemployeeUpdated } from "../../utils/notifications";
 
 const EmployeePage = () => {
   const dispatch = useAppDispatch();
-  const { currentEmployeError, updateEmployeError, currentEmployee, isCurrentEmployeeLoading } =
-    useAppSelector((state) => state.employees);
+  const {
+    currentEmployeError,
+    updateEmployeError,
+    currentEmployee,
+    isCurrentEmployeeLoading,
+    updateEmployeSuccess,
+  } = useAppSelector((state) => state.employees);
   const { id } = useParams();
 
   useEffect(() => {
@@ -26,6 +32,12 @@ const EmployeePage = () => {
       }
     };
   }, [currentEmployeError]);
+
+  useEffect(() => {
+    if (updateEmployeSuccess) {
+      notifYemployeeUpdated(() => dispatch(setUpdateEmployeeSuccess(false)));
+    }
+  }, [updateEmployeSuccess]);
 
   return (
     <MainLayout>

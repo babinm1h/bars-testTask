@@ -19,7 +19,7 @@ const EditEmployeForm: FC<IProps> = ({ employee, updateError }) => {
     <div className={st.wrapper}>
       <div className={st.formBlock}>
         <h1 className={st.title}>Редактирование сотрудника №{employee.id}</h1>
-        <form action="/" className={st.form} onSubmit={formik.handleSubmit}>
+        <form action="/" className={st.form} onSubmit={formik.handleSubmit} data-testid="edit-form">
           <TextField
             placeholder="Имя"
             label="Имя сотрудника"

@@ -3,7 +3,7 @@ import * as Yup from "yup";
 export const userUpdateEditValidationSchema = () => {
   return Yup.object().shape({
     name: Yup.string()
-      .matches(/^[а-яё\s]+$|^[\u0041-\u007a\s]+$/g, "Имя должно содержать только буквы одного языка")
+      .matches(/^[а-яА-ЯЁё\s]+$|^[\u0041-\u007a\s]+$/g, "Имя должно содержать только буквы одного языка")
       .max(50, "Максимальная длина 50 символов")
       .required("Обязательное поле")
       .min(1, "Минимальная длина 1 символ"),

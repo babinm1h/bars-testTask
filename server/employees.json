@@ -1,12 +1,12 @@
 {
   "employees": [
     {
-      "id": 3,
-      "name": "Богдан Давыдов",
-      "isArchive": false,
-      "role": "driver",
+      "name": "Богдан Давыдова",
       "phone": "+7 (971) 575-2645",
-      "birthday": "29.11.1990"
+      "birthday": "29.11.1990",
+      "role": "driver",
+      "isArchive": true,
+      "id": 3
     },
     {
       "id": 4,
@@ -119,6 +119,22 @@
       "role": "waiter",
       "phone": "+7 (877) 450-3253",
       "birthday": "03.12.1994"
+    },
+    {
+      "name": "Новый ЮзерОбновлен",
+      "phone": "+7 (777) 777-7777",
+      "birthday": "11.11.2000",
+      "role": "waiter",
+      "isArchive": true,
+      "id": 18
+    },
+    {
+      "name": "Новый",
+      "phone": "+7 (777) 777-7777",
+      "birthday": "11.11.1999",
+      "role": "waiter",
+      "isArchive": false,
+      "id": 19
     }
   ]
 }

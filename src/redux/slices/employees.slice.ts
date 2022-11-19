@@ -17,6 +17,8 @@ const initialState: IEmployeesState = {
   isCurrentEmployeeLoading: false,
   updateEmployeError: "",
   createEmployeError: "",
+  createEmployeSuccess: false,
+  updateEmployeSuccess: false,
   filters: {
     role: null,
     isArchive: false,
@@ -39,6 +41,12 @@ const employeesSlice = createSlice({
     },
     resetCurrentEmployeeErorr(state) {
       state.currentEmployeError = "";
+    },
+    setCreateEmployeeSuccess(state, action) {
+      state.createEmployeSuccess = action.payload;
+    },
+    setUpdateEmployeeSuccess(state, action) {
+      state.createEmployeSuccess = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -74,27 +82,37 @@ const employeesSlice = createSlice({
     builder.addCase(updateEmployee.fulfilled, (state, action) => {
       state.currentEmployee = action.payload;
       state.updateEmployeError = "";
+      state.updateEmployeSuccess = true;
     });
 
     builder.addCase(updateEmployee.pending, (state) => {});
 
     builder.addCase(updateEmployee.rejected, (state, action) => {
       state.updateEmployeError = action.payload as string;
+      state.updateEmployeSuccess = false;
     });
 
     builder.addCase(createEmployee.fulfilled, (state, action) => {
       state.employees.push(action.payload);
       state.createEmployeError = "";
+      state.createEmployeSuccess = true;
     });
 
     builder.addCase(createEmployee.pending, (state) => {});
 
     builder.addCase(createEmployee.rejected, (state, action) => {
       state.createEmployeError = action.payload as string;
+      state.createEmployeSuccess = false;
     });
   },
 });
 
 export default employeesSlice.reducer;
-export const { setRoleFilter, setSortBy, resetCurrentEmployeeErorr, toggleIsArchived } =
-  employeesSlice.actions;
+export const {
+  setRoleFilter,
+  setSortBy,
+  resetCurrentEmployeeErorr,
+  toggleIsArchived,
+  setCreateEmployeeSuccess,
+  setUpdateEmployeeSuccess,
+} = employeesSlice.actions;

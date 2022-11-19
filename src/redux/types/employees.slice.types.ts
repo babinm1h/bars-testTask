@@ -17,6 +17,10 @@ export interface IEmployeesState {
   currentEmployee: IEmployee | null;
   isCurrentEmployeeLoading: boolean;
   currentEmployeError: string;
+
   updateEmployeError: string;
+  updateEmployeSuccess: boolean;
+
   createEmployeError: string;
+  createEmployeSuccess: boolean;
 }

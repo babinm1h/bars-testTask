@@ -29,13 +29,24 @@ const Filters: FC<IProps> = ({ role }) => {
     <form className={st.filters}>
       <div className={st.sorts}>
         <div>Сортировать по:</div>
-        <RadioButton id="name" name="sortby" label="Имени" onChange={onApplySortByName} />
+        <RadioButton
+          id="name"
+          name="sortby"
+          label="Имени"
+          onChange={onApplySortByName}
+          data-testid="filter-name"
+        />
         <RadioButton id="birth" name="sortby" label="Дате рождения" onChange={onApplySortByBirth} />
       </div>
 
       <div className={st.filter}>
         <div>Фильтры:</div>
-        <Checkbox id="archived" label="В архиве" onChange={() => dispatch(toggleIsArchived())} />
+        <Checkbox
+          id="archived"
+          label="В архиве"
+          onChange={() => dispatch(toggleIsArchived())}
+          data-testid="filter-archived"
+        />
 
         <RoleSelect value={role || ""} onSelect={onSelectRole} />
       </div>

@@ -40,8 +40,8 @@
         transition: opacity 0.2s ease-in-out;
         position: absolute;
         margin-top: 5px;
+        left: 0;
         z-index: 5;
-        bottom: -80px;
         &.selectDropdownEntered {
             opacity: 1;
         }

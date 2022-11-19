@@ -51,7 +51,7 @@ const CreateEmployeeForm: FC<IProps> = ({ createError }) => {
 
         {createError && <div className={st.error}>{createError}</div>}
 
-        <Button type="submit" disabled={formik.isSubmitting}>
+        <Button type="submit" disabled={formik.isSubmitting} role="button">
           Создать
         </Button>
       </form>
