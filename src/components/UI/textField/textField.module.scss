@@ -1,0 +1,26 @@
+@import "../../../styles/variables.scss";
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .fieldLabel {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .fieldInput {
+        padding: 7px 10px;
+        border: 2px solid $hoverGray;
+        border-radius: 2px;
+        transition: all 0.2s ease-in-out;
+        &:focus {
+            border-color: $primaryBlue;
+        }
+        &:hover:not(&:focus) {
+            border-color: $lightGray;
+        }
+    }
+    .fieldError {
+        font-size: 14px;
+        color: red;
+    }
+}

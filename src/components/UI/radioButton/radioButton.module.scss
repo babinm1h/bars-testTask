@@ -1,0 +1,45 @@
+@import "../../../styles/variables.scss";
+.checkbox {
+    &__btn {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid $lightGray;
+        background-color: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+        &::after {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            content: "";
+            background-color: #fff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__input {
+        display: none;
+        &:checked {
+            & ~ .checkbox__btn {
+                background-color: $primaryBlue;
+                border-color: $primaryBlue;
+            }
+        }
+    }
+}

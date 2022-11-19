@@ -1,0 +1,17 @@
+@import "../../../styles/variables.scss";
+.header {
+    padding: 20px;
+    width: 100%;
+    background-color: $primaryBlue;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    .link {
+        color: #fff;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "../../../styles/variables.scss";
+.checkbox {
+    &__icon {
+        opacity: 0;
+        transition: all 0.1s ease-in-out;
+        fill: #fff;
+    }
+    &__btn {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 2px;
+        border: 2px solid $lightGray;
+        background-color: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        align-self: flex-start;
+    }
+
+    &__input {
+        display: none;
+        &:checked {
+            & ~ .checkbox__btn {
+                background-color: $primaryBlue;
+                border-color: $primaryBlue;
+                .checkbox__icon {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
