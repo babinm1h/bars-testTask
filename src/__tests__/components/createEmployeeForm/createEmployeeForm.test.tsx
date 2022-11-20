@@ -7,7 +7,7 @@ describe("createEmployeeForm", () => {
   test("fields should be empty", () => {
     render(
       <Provider store={store}>
-        <CreateEmployeeForm createError="" />
+        <CreateEmployeeForm />
       </Provider>
     );
     expect(screen.getByTestId("create-form")).toHaveFormValues({
@@ -22,7 +22,7 @@ describe("createEmployeeForm", () => {
     const invalidPhone = "12345";
     render(
       <Provider store={store}>
-        <CreateEmployeeForm createError="" />
+        <CreateEmployeeForm />
       </Provider>
     );
     const form = screen.getByTestId("create-form");
