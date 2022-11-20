@@ -135,6 +135,14 @@
       "role": "waiter",
       "isArchive": false,
       "id": 19
+    },
+    {
+      "name": "Абв где",
+      "phone": "+7 (777) 777-7777",
+      "birthday": "11.11.2000",
+      "role": "driver",
+      "isArchive": true,
+      "id": 20
     }
   ]
 }

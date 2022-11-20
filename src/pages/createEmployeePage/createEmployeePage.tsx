@@ -3,8 +3,8 @@ import CreateEmployeeForm from "../../components/createEmployeeForm/createEmploy
 import MainLayout from "../../components/mainLayout/mainLayout";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { setCreateEmployeeSuccess } from "../../redux/slices/employees.slice";
-import { notifYemployeeCreated } from "../../utils/notifications";
+import { setCreateEmployeeError, setCreateEmployeeSuccess } from "../../redux/slices/employees.slice";
+import { notifYemployeeCreated, notifyError } from "../../utils/notifications";
 
 const CreateEmployeePage = () => {
   const { createEmployeError, createEmployeSuccess } = useAppSelector((state) => state.employees);
@@ -16,9 +16,15 @@ const CreateEmployeePage = () => {
     }
   }, [createEmployeSuccess]);
 
+  useEffect(() => {
+    if (createEmployeError) {
+      notifyError(createEmployeError, () => dispatch(setCreateEmployeeError("")));
+    }
+  }, [createEmployeError]);
+
   return (
     <MainLayout>
-      <CreateEmployeeForm createError={createEmployeError} />
+      <CreateEmployeeForm />
     </MainLayout>
   );
 };

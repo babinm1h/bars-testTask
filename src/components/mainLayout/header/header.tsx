@@ -5,7 +5,7 @@ import st from "./header.module.scss";
 
 const Header = () => {
   return (
-    <header className={st.header}>
+    <header className={st.header} role={"navigation"}>
       <nav className={st.nav}>
         <NavLink to={AllRoutes.home} className={st.link}>
           Сотрудники

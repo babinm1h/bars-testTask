@@ -13,7 +13,7 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
   moduleNameMapper: {
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
-    "^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$": "<rootDir>/__mocks__/file-mock.js",
+    "^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$": "<rootDir>//mocks/data.ts",
   },
 };
 export default config;

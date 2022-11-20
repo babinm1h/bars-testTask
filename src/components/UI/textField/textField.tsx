@@ -8,17 +8,18 @@ interface IProps {
   label?: string;
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
+  value?: string;
   error?: string;
   mask?: string;
   defaultValue?: string;
+  id?: string;
 }
 
-const TextField: FC<IProps> = ({ name, label, placeholder, onChange, value, error, mask, defaultValue }) => {
+const TextField: FC<IProps> = ({ name, label, placeholder, onChange, value, error, mask, defaultValue, id }) => {
   return (
     <div className={st.field}>
       {!!label && (
-        <label htmlFor={name || ""} className={st.fieldLabel}>
+        <label htmlFor={name || id} className={st.fieldLabel}>
           {label}
         </label>
       )}
@@ -33,6 +34,7 @@ const TextField: FC<IProps> = ({ name, label, placeholder, onChange, value, erro
           value={value}
           defaultValue={defaultValue}
           type="text"
+          id={id}
         />
       ) : (
         <input
@@ -43,9 +45,14 @@ const TextField: FC<IProps> = ({ name, label, placeholder, onChange, value, erro
           onChange={onChange}
           value={value}
           defaultValue={defaultValue}
+          id={id}
         />
       )}
-      {error && <div className={st.fieldError}>{error}</div>}
+      {error && (
+        <div className={st.fieldError} data-testid="textfield-error">
+          {error}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,14 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { EmployeeRole } from "../../types/employee";
-import {
-  createEmployee,
-  fetchEmployeeById,
-  fetchEmployees,
-  updateEmployee,
-} from "../thunks/employees.thunks";
+import { createEmployee, fetchEmployeeById, fetchEmployees, updateEmployee } from "../thunks/employees.thunks";
 import { IEmployeesState, TSortBy } from "../types/employees.slice.types";
 
-const initialState: IEmployeesState = {
+export const initialState: IEmployeesState = {
   isEmployeesLoading: false,
   employees: [],
   employeesError: "",
@@ -42,11 +37,17 @@ const employeesSlice = createSlice({
     resetCurrentEmployeeErorr(state) {
       state.currentEmployeError = "";
     },
-    setCreateEmployeeSuccess(state, action) {
+    setCreateEmployeeSuccess(state, action: PayloadAction<boolean>) {
       state.createEmployeSuccess = action.payload;
     },
-    setUpdateEmployeeSuccess(state, action) {
+    setUpdateEmployeeSuccess(state, action: PayloadAction<boolean>) {
       state.createEmployeSuccess = action.payload;
+    },
+    setUpdateEmployeeError(state, action: PayloadAction<string>) {
+      state.updateEmployeError = action.payload;
+    },
+    setCreateEmployeeError(state, action: PayloadAction<string>) {
+      state.createEmployeError = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -115,4 +116,6 @@ export const {
   toggleIsArchived,
   setCreateEmployeeSuccess,
   setUpdateEmployeeSuccess,
+  setCreateEmployeeError,
+  setUpdateEmployeeError,
 } = employeesSlice.actions;

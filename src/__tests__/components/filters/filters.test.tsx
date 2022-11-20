@@ -7,6 +7,12 @@ jest.mock("react-redux");
 const mockedDispatch = jest.spyOn(reduxHooks, "useDispatch");
 
 describe("filters", () => {
+  test("is rendering", async () => {
+    render(<Filters role={null} />);
+    expect(screen.getByText("Сортировать по:")).toBeInTheDocument();
+    expect(screen.getByText("Фильтры:")).toBeInTheDocument();
+  });
+
   test("should call setSortBy name", async () => {
     const disp = jest.fn();
     mockedDispatch.mockReturnValue(disp);

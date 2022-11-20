@@ -7,14 +7,14 @@ import TextField from "../UI/textField/textField";
 import st from "./createEmployeeForm.module.scss";
 
 interface IProps {
-  createError: string;
+  
 }
 
-const CreateEmployeeForm: FC<IProps> = ({ createError }) => {
+const CreateEmployeeForm: FC<IProps> = () => {
   const { formik, handleCheckbox, handleSelect } = useCreateEmployeeForm();
   return (
     <div className={st.wrapper}>
-      <form action="/" className={st.form} onSubmit={formik.handleSubmit}>
+      <form action="/" className={st.form} onSubmit={formik.handleSubmit} data-testid="create-form">
         <TextField
           placeholder="Имя"
           label="Имя сотрудника"
@@ -42,14 +42,7 @@ const CreateEmployeeForm: FC<IProps> = ({ createError }) => {
           mask="99.99.9999"
         />
         <RoleSelect onSelect={handleSelect} value={formik.values.role} error={formik.errors.role} />
-        <Checkbox
-          label="В архиве"
-          id="isArchive"
-          onChange={handleCheckbox}
-          checked={formik.values.isArchive}
-        />
-
-        {createError && <div className={st.error}>{createError}</div>}
+        <Checkbox label="В архиве" id="isArchive" onChange={handleCheckbox} checked={formik.values.isArchive} />
 
         <Button type="submit" disabled={formik.isSubmitting} role="button">
           Создать

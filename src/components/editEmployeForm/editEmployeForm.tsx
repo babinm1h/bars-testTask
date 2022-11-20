@@ -56,7 +56,7 @@ const EditEmployeForm: FC<IProps> = ({ employee, updateError }) => {
 
           {updateError && <div className={st.error}>{updateError}</div>}
 
-          <Button type="submit" disabled={formik.isSubmitting}>
+          <Button type="submit" disabled={formik.isSubmitting} role="button">
             Обновить
           </Button>
         </form>
