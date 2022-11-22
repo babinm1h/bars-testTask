@@ -1,15 +1,15 @@
 import { toast } from "react-toastify";
 
-export const notifYemployeeCreated = (onClose: () => void) => {
+export const notifYemployeeCreated = (onOpen: () => void) => {
   return toast.success("Сотрудник успешно создан", {
-    onClose,
+    onOpen,
   });
 };
 
-export const notifYemployeeUpdated = (onClose: () => void) => {
-  return toast.success("Сотрудник успешно обновлен", { onClose });
+export const notifYemployeeUpdated = (onOpen: () => void) => {
+  return toast.success("Сотрудник успешно обновлен", { onOpen });
 };
 
-export const notifyError = (errorMsg: string | string[], onClose?: () => void) => {
-  return toast.error(errorMsg.toString(), { onClose });
+export const notifyError = (errorMsg: string | string[], onOpen?: () => void) => {
+  return toast.error(errorMsg.toString(), { onOpen });
 };
