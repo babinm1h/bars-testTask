@@ -41,7 +41,7 @@ const employeesSlice = createSlice({
       state.createEmployeSuccess = action.payload;
     },
     setUpdateEmployeeSuccess(state, action: PayloadAction<boolean>) {
-      state.createEmployeSuccess = action.payload;
+      state.updateEmployeSuccess = action.payload;
     },
     setUpdateEmployeeError(state, action: PayloadAction<string>) {
       state.updateEmployeError = action.payload;
