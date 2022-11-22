@@ -1,5 +1,6 @@
-import { AnyAction, combineReducers, configureStore, ThunkDispatch } from "@reduxjs/toolkit";
+import { combineReducers, configureStore, ThunkDispatch, AnyAction } from "@reduxjs/toolkit";
 import employeesSlice from "./slices/employees.slice";
+
 
 const rootReducer = combineReducers({
   employees: employeesSlice,
