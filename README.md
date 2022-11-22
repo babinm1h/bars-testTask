@@ -1,5 +1,5 @@
-1. сделать git clone - для запуска приложения
-2. в папке проекта - npm install
+1. git clone
+2. npm install 
 
 # npm run dev - для запуска приложения
 # npm run test - для запуска тестов
