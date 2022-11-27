@@ -14,7 +14,7 @@ const CreateEmployeePage = () => {
     if (createEmployeSuccess) {
       notifYemployeeCreated(() => dispatch(setCreateEmployeeSuccess(false)));
     }
-  }, [createEmployeSuccess]);
+  }, [createEmployeSuccess, dispatch]);
 
   useEffect(() => {
     if (createEmployeError) {

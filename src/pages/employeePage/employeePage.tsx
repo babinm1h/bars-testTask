@@ -22,7 +22,7 @@ const EmployeePage = () => {
   useEffect(() => {
     if (!id) return;
     dispatch(fetchEmployeeById(+id));
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     return () => {

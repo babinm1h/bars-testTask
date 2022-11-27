@@ -16,7 +16,7 @@ jobs:
 
       - name: install modules
         run: npm install
-      - name: build proj
-        run: npm run build
       - name: testing jest
         run: npm run test
+      - name: build proj
+        run: npm run build
