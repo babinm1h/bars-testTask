@@ -12,11 +12,11 @@ jobs:
       - name: Starting Node.js ${{matrix.node-version}}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{matrix.node-version}}
 
       - name: install modules
-        uses: npm install
+        run: npm install
       - name: build proj
-        uses: npm run build
+        run: npm run build
       - test: testing jest
-        uses: npm run test
+        run: npm run test
