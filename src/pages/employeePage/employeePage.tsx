@@ -30,19 +30,19 @@ const EmployeePage = () => {
         dispatch(resetCurrentEmployeeErorr());
       }
     };
-  }, [currentEmployeError]);
+  }, [currentEmployeError, dispatch]);
 
   useEffect(() => {
     if (updateEmployeSuccess) {
       notifYemployeeUpdated(() => dispatch(setUpdateEmployeeSuccess(false)));
     }
-  }, [updateEmployeSuccess]);
+  }, [updateEmployeSuccess, dispatch]);
 
   useEffect(() => {
     if (updateEmployeError) {
       notifyError(updateEmployeError, () => dispatch(setUpdateEmployeeError("")));
     }
-  }, [updateEmployeError]);
+  }, [updateEmployeError, dispatch]);
 
   return (
     <MainLayout>

@@ -20,7 +20,7 @@ const CreateEmployeePage = () => {
     if (createEmployeError) {
       notifyError(createEmployeError, () => dispatch(setCreateEmployeeError("")));
     }
-  }, [createEmployeError]);
+  }, [createEmployeError, dispatch]);
 
   return (
     <MainLayout>
