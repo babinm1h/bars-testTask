@@ -15,8 +15,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: install modules
-        use: npm install
+        uses: npm install
       - name: build proj
-        use: npm run build
+        uses: npm run build
       - test: testing jest
-        use: npm run test
+        uses: npm run test
