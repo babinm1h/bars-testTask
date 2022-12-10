@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import CreateEmployeePage from "../../pages/createEmployeePage/createEmployeePage";
+import Dnd from "../../pages/dnd/dnd";
 import EmployeePage from "../../pages/employeePage/employeePage";
 import EmployeesPage from "../../pages/employeesPage/employeesPage";
 import ErrorPage from "../../pages/errorPage/errorPage";
@@ -10,11 +11,13 @@ export enum AllRoutes {
   employees = "/employees",
   createEmployee = "/employees/create",
   any = "/*",
+  dnd = "/dnd",
 }
 
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path={AllRoutes.dnd} element={<Dnd />} />
       <Route path={AllRoutes.home} element={<EmployeesPage />} />
       <Route path={AllRoutes.employees + "/:id"} element={<EmployeePage />} />
       <Route path={AllRoutes.createEmployee} element={<CreateEmployeePage />} />

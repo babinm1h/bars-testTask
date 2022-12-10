@@ -13,6 +13,9 @@ const Header = () => {
         <NavLink to={AllRoutes.createEmployee} className={st.link}>
           Добавить сотрудника
         </NavLink>
+        <NavLink to={AllRoutes.dnd} className={st.link}>
+          Dnd practice
+        </NavLink>
       </nav>
     </header>
   );
